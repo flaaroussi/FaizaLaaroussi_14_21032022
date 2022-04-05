@@ -1,0 +1,90 @@
+[
+  {   
+    "name" : "",
+    "inputs" : [
+      {
+        "classeName":"firstName",
+        "id":"firstName",
+        "name":"firstName",
+        "label":"First name",
+        "type":"text",
+        "required":true,
+        "msg_error":"First name is required"
+      },
+      {
+        "className": "lastName",
+        "id": "lastName",
+        "name":"lastName",
+        "label": "Last name",
+        "type": "text",
+        "required":true,
+        "msg_error":"Last name is required"
+      },
+      {
+        "className": "dateOfBirth",
+        "id": "dateOfBirth",
+        "name":"dateOfBirth",
+        "label": "Date of Birth",
+        "type": "date",
+        "required":true,
+        "msg_error":"Date of Birth is required"
+      },
+      {
+        "className": "startDate",
+        "id": "startDate",
+        "name": "startDate",
+        "label": "Start Date",
+        "type": "date",
+        "required":true,
+        "msg_error": "Start date is required"
+      }
+    ]      
+  },
+  {
+    "name" : "Address",
+    "inputs" : [
+      {
+        "className": "street",
+        "id": "street",
+        "name": "street",
+        "label": "Street",
+        "type": "text",
+        "required":true,
+        "msg_error": "Street is required"
+      },
+      {
+        "className": "city",
+        "id": "city",
+        "name": "city",
+        "label": "City",
+        "type": "city",
+        "required":true,
+        "msg_error": "City is required"
+      },
+      {
+        "className": "zipCode",
+        "id": "zipCode",
+        "name": "zipCode",
+        "label": "Zip Code",
+        "type": "text",
+        "required":true,
+        "msg_error": "Street is required"
+      }
+    ]
+  },
+  {
+    "name" : "",
+    "inputs": [
+      {
+        "className": "departement",
+        "id": "departement",
+        "name": "departement",
+        "label": "Departement",
+        "type": "combo",
+        "required":true,
+        "msg_error": "Departement is required"
+      }
+    ]
+  }  
+  
+]

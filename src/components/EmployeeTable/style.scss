@@ -1,0 +1,96 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/variables.scss';
+
+.employee-table{
+   width:100%;
+   margin-bottom: 0px;
+   
+}
+
+
+.employee-table > tbody > tr:nth-of-type(2n+1){
+   background-color: #eef1e3
+}
+//style head table
+thead :first-child :first-child {
+   border-top-left-radius: 0.5rem;
+ }
+ 
+  thead :first-child :last-child {
+   border-top-right-radius: 0.5rem;
+ }
+ 
+ tbody :last-child :first-child {
+   border-bottom-left-radius: 0.5rem;
+ }
+ 
+  tbody :last-child :last-child {
+   border-bottom-right-radius: 0.5rem;
+ }
+
+
+ 
+.btn-table{
+
+  cursor: pointer;
+  margin: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  background-color: yellow;
+  border-radius: 0.25rem;
+
+  line-height: 1.25rem;
+}
+
+.page-title{
+   margin-bottom: 2rem;
+   font-size: 24px;
+   font-weight: 700;
+   color: $color-primary;
+}
+
+
+/* TABLE NAVIGATION */
+.table-pagination {
+   @include flex(row, space-between, center);
+   background-color: $grid-footer-bg;
+   height: 50px;
+   &__btn{
+      justify-content: end;
+   }
+ }
+
+ .table-header{
+   @include flex(row, space-between, center);
+   height: 30px;
+   margin-bottom: 2rem;
+
+ }
+
+ .table-hrnet-success{
+    background-color: $grid-footer-bg !important;
+
+ }
+
+ .sortIcone i{
+    margin-left:10px;
+ }
+
+
+ .table-header__filter {
+   display: flex;
+   justify-content: flex-end;
+   align-items: center;
+ }
+ 
+ .table-header__filter img {
+   width: 16px;
+   height: 16px;
+   margin-right: 0.25rem;
+ }
+ 
+ .table-header__filter input {
+   margin-left: 0.5rem;
+   padding: 0.25rem;
+  
+   border-radius: 0.25rem;
+ }

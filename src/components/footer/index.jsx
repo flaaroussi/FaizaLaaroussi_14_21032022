@@ -11,8 +11,7 @@ import './style.scss';
 export default function Footer(){
  
   
-   return(<footer navbar-dark bg-dark>
-     Footer
-    
+   return(<footer>
+        <div className="footer">WEALTH HEALTH</div>
    </footer>)
 }

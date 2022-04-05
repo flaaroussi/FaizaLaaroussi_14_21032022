@@ -7,23 +7,24 @@
    margin: 0;
    list-style: none;
    list-style-type: none;
+   color:$color-text
 }
 html {
-   font-family: Avenir, Helvetica, Arial, sans-serif;
+   font-family: "Source Sans Pro", Arial, sans-serif;
    -webkit-font-smoothing: antialiased;
    -moz-osx-font-smoothing: grayscale;
-   text-align: center;
    color: #2c3e50;
  }
  
 
 body{
+   font-family: "Source Sans Pro", Arial, sans-serif;
    font-size: 14 px; /* 12px */
    margin: 0;
    display: flex;
    flex-direction: column;
    min-height: 100vh;
-
+   background-color: $color-bg;
 }
 
 a{

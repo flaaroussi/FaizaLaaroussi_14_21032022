@@ -3,6 +3,7 @@
 
 footer{
    height: 80px;
-   background-color: $color-black2;
-   color: #FFFFFF;
+   background-color: $color-footer;
+   @include flex(row, center, center)
+ 
 }

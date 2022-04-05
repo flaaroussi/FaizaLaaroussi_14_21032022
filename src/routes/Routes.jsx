@@ -14,13 +14,9 @@ export default function Router(){
 
    return <Routes>  
             <Route path="/" element={<Home exact="true"/>} />
-           
             <Route path="/create_employee" element={<CreateEmployee />} />
-
-            <Route path="/list_employee" element={<ListEmployee />} />
-           
+            <Route path="/employee_list" element={<ListEmployee />} />
             <Route path="*" element={<Error />}  />
-            
    </Routes>
    
 }  

@@ -1,6 +1,43 @@
 @import '../../styles/mixins.scss';
 @import '../../styles/variables.scss';
 
+/*Navbar*/
+
+.nav-menu {
+  @include flex( row, space-between, center)
+  
+ }
+
 .navbar{
    height: 80px;
+}
+.nav-logo--design {
+   width: 40px;
+   height: 40px;
+ }
+ 
+ .nav-logo--brand {
+   width: 240px;
+   height: 40px;
+ }
+
+ .nav-ico {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.5rem;
+}
+
+
+
+
+//Style hidde et show
+.nav-item:hover,
+.nav-item:focus {
+  background: red;
+  color: var(--tertiary);
+  //outline: none;
+}
+
+.active {
+  display: none;
 }

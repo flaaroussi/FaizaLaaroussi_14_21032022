@@ -1,0 +1,54 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/variables.scss';
+
+.form-employee{
+   display: flex;
+   flex-direction: column;
+   width: 75%;
+   max-width: 500px;
+   margin: auto;
+   border-radius: 0.5rem;
+   padding: 2rem;
+   background-color: #FFFFFF;
+   box-shadow: rgb(149 157 165 / 20%) 0px 8px 24px !important;
+      .input-error{
+      color:$color-error;
+      }
+      input{
+         cursor: pointer;
+      }
+      label {
+         display: block;
+         margin-top: 1rem;
+         margin-bottom: 10px;
+         font-weight: 700;
+         color:$color-secondary
+      }
+      &__icon{
+         @include flex( row, center, center);
+         
+         img{
+            width: 120px;
+            height: 120px;
+
+         }
+      }
+}
+
+
+
+
+
+/* INPUTS ORDER */
+.form-employee{
+   
+      .mb-3{
+         display: flex;
+         flex-direction: column;
+        
+      }
+   
+}
+
+
+

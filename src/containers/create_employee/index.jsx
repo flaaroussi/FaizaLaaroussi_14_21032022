@@ -1,5 +1,7 @@
+import Form from '../../components/form';
 import './style.scss';
 
+import { useEffect } from 'react';
 
 /**
  * @description render page
@@ -9,10 +11,12 @@ import './style.scss';
  */
 
 export default function CreateEmployee(){
- 
-  
-   return(<main className="main">
-     Page Create employee
-    
+   useEffect(() => {    
+      document.title = `HRnet - Create employee `
+      }, []);
+
+   return(<main className="main">    
+   <h2 className='page-title'> Add a new employee  </h2> 
+    <Form />
    </main>)
 }

@@ -7,8 +7,8 @@
    min-height: calc(100vh - 146px);
    &__404{
       font-size: 288px;
-      font-weight: $font-bold;
-      color:$color-red ;
+      font-weight: bold;
+      color:$color-error ;
    }
 
    &__msg{
@@ -18,11 +18,11 @@
 
    &__lien{
       font-size:18px;
-      color :$color-red;
+      color :$color-error;
       font-weight: $font-medium;
       
       &.active{
-         border-bottom:1px solid $color-red;
+         border-bottom:1px solid $color-error;
       }
    }  
 }
