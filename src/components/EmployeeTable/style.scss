@@ -3,13 +3,27 @@
 
 .employee-table{
    width:100%;
-   margin-bottom: 0px;
-   
+   margin-bottom: 0px;   
 }
+.employee-table th{
+ font-size: 14px;   
+}
+.employee-table td{
+  font-size: 13px;   
+ }
 
 
 .employee-table > tbody > tr:nth-of-type(2n+1){
-   background-color: #eef1e3
+   background-color: rgba(237, 241, 247,.15) !important;
+   border-bottom:1px solid #e5edf8 !important;
+   border-top:1px solid #e5edf8 !important
+}
+.employee-table > thead > tr>th{
+  text-align: center;
+  border-right: 1px solid $color-bg-nav;
+}
+.employee-table > thead > tr>th:last-child{
+  border-right: 0px
 }
 //style head table
 thead :first-child :first-child {
@@ -31,13 +45,11 @@ thead :first-child :first-child {
 
  
 .btn-table{
-
   cursor: pointer;
   margin: 0.25rem;
   padding: 0.25rem 0.5rem;
   background-color: yellow;
   border-radius: 0.25rem;
-
   line-height: 1.25rem;
 }
 
@@ -52,7 +64,7 @@ thead :first-child :first-child {
 /* TABLE NAVIGATION */
 .table-pagination {
    @include flex(row, space-between, center);
-   background-color: $grid-footer-bg;
+   background-color: #EDF1F7;
    height: 50px;
    &__btn{
       justify-content: end;
@@ -67,7 +79,7 @@ thead :first-child :first-child {
  }
 
  .table-hrnet-success{
-    background-color: $grid-footer-bg !important;
+    background-color: #EDF1F7 !important;
 
  }
 
@@ -94,3 +106,8 @@ thead :first-child :first-child {
   
    border-radius: 0.25rem;
  }
+ 
+
+ 
+
+ 

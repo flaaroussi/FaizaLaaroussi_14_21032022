@@ -100,7 +100,7 @@ export default function EmployeeTable(){
           </div>
       </header>
       <main className="table-main">
-          <table {...getTableProps()} className="employee-table table table-striped">
+          <table {...getTableProps()} className="employee-table table">
             <thead>
             
                   {// Loop over the header rows

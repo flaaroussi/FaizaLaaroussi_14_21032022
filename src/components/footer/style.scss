@@ -2,8 +2,8 @@
 @import '../../styles/variables.scss';
 
 footer{
-   height: 80px;
-   background-color: $color-footer;
-   @include flex(row, center, center)
+   height: 50px;
+   background-color: #FFFFFF;
+   @include flex(row, center, center);
  
 }

@@ -9,9 +9,7 @@ import './style.scss';
  */
 
 export default function Footer(){
- 
-  
-   return(<footer>
-        <div className="footer">WEALTH HEALTH</div>
+   return(<footer className="footer">
+        <div >WEALTH HEALTH</div>
    </footer>)
 }

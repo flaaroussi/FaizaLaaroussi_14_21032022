@@ -1,30 +1,28 @@
-import React from 'react';
-
-import Select from 'react-select';
-import {
-  ColourOption,
-  colourOptions,
-  FlavourOption,
-  GroupedOption,
-  groupedOptions,
-} from '../data';
+import React from 'react'
 
 
+/**
+ * @description component combo
+ * @component
+ * 
+ * @returns 
+ */
 
-const formatGroupLabel = (data: GroupedOption) => (
-  <div >
-    <span>{data.label}</span>
-    <span >{data.options.length}</span>
-  </div>
-);
+ export default function Combo({data, register, errors}){  
+  const  isRequired = data.required;
 
-export default function Combo(){
-   return(<Select
-      defaultValue={colourOptions[1]}
-      options={groupedOptions}
-      formatGroupLabel={formatGroupLabel}
-    />
-
-   )
+  return( 
+    <div className={`form-employee__input ${data.name}`}>
+      <label className="form-label" htmlFor={data.id}>{data.label}</label>
+      <select name={data.name} id={data.id} {...register(data.name,  { required: isRequired })} className="form-select">
+        {
+          data.options.map((option, index) => (
+            <option key={index} value={option.value}>{option.label}</option>
+          ))
+        }
+      </select>
+       {errors.hasOwnProperty(data.name) && <span className="input-error">{data.msg_error}</span>} 
+    </div>
+    )
+   
 }
-  

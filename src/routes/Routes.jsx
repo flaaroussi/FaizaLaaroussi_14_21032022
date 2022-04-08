@@ -13,7 +13,7 @@ import ListEmployee from "../containers/list_employee";
 export default function Router(){
 
    return <Routes>  
-            <Route path="/" element={<Home exact="true"/>} />
+            <Route path="/employee_list" element={<ListEmployee exact="true"/>} />
             <Route path="/create_employee" element={<CreateEmployee />} />
             <Route path="/employee_list" element={<ListEmployee />} />
             <Route path="*" element={<Error />}  />

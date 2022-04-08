@@ -1,10 +1,11 @@
 import {  Controller } from "react-hook-form";
+import PropTypes from 'prop-types';
 import DatePicker from 'react-datepicker';
 
 /**
- * 
+ * @description component date
  * @param {*} param0 
- * @returns 
+ * @returns  {Reactnode}   jsx injected in DOM
  */
 
 export default function Datepicker({data, register, errors, control}){
@@ -25,6 +26,7 @@ export default function Datepicker({data, register, errors, control}){
                   name={data.name}
                   onChange={(date) => field.onChange(date)}
                   selected={field.value}
+                  
                   />
                   )}
                   />   
@@ -36,3 +38,14 @@ export default function Datepicker({data, register, errors, control}){
    </div>)
 }
 
+
+/**
+ * date PROPTYPES///////////////////////////////////
+ */
+ Datepicker.propTypes = {
+      //data: PropTypes.objet.isRequired,
+      errors: PropTypes.func.isRequired,
+      control: PropTypes.func.isRequired,
+      
+    };
+    

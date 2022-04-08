@@ -15,8 +15,14 @@ export default function CreateEmployee(){
       document.title = `HRnet - Create employee `
       }, []);
 
-   return(<main className="main">    
-   <h2 className='page-title'> Add a new employee  </h2> 
-    <Form />
+   return(<main className="main">  
+   <div className='bloc'> 
+      <div className='header'>
+         <div className='title'>Add a new employee</div> 
+      </div>
+      <div className='body'>
+         <Form />
+      </div>
+   </div> 
    </main>)
 }

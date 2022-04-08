@@ -30,3 +30,13 @@ body{
 a{
    text-decoration: none;
 }
+a:hover,
+a:focus,
+a:active{
+   color: $color-primary;
+}
+
+.bg-blanc{
+   background-color: #FFFFFF;
+   box-shadow:$hvs-o2s-shadow
+}
