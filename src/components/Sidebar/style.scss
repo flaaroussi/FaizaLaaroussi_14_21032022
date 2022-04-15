@@ -9,6 +9,13 @@
    box-shadow:$hvs-o2s-shadow;
   // height: calc(100vh - 91px);
    @include flex (column, space-between, center);
+   @media screen and (max-width: 1260px) {
+      .table-main--sorter {
+         display: flex;
+         flex-direction: row;
+      }
+   }
+   
 
    .nav{     
       margin-top: 100px;

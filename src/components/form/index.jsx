@@ -17,12 +17,16 @@ import * as yup from "yup";
 import 'react-datepicker/dist/react-datepicker.css'
 import './style.scss';
 
+import { Modal } from 'reactmodalfz';
+import 'reactmodalfz/dist/index.css'
 
 
 const getDate  = (date) => {
     const dt = new Date(date);
     return dt.getFullYear() + '/'+ (dt.getMonth() + 1) + '/'+ dt.getDate()
 } 
+
+
 
 /**
  * @description component form employee
@@ -32,42 +36,50 @@ const getDate  = (date) => {
  */
 
 export default function Form(){   
-
+    const [isOpen, setIsOpen]  = useState(0); 
+    const  navigate = useNavigate()
+    
+    const goToEmployeeList = ()=>{
+        //fermer le modal
+        setIsOpen(0)
+        //puis redirect
+        navigate(`/employee_list`)
+    }
     //Schema de validation avec yub
     const schema = yup.object({
-        firstName: yup.string().required(),
-        lasttName: yup.string().required(),
+        firstName: yup.string().required().min(3),
+        lastName: yup.string().required(),
         departement: yup.string().required(),
         city: yup.string().required(),
         street: yup.string().required(),
         state: yup.string().required(),
-        zipCode: yup.string().required(),
+        zipCode: yup.number().required(),
         
-        dateOfBirth: yup.string().required(),
-        dateOfStart: yup.string().required(),
-
-        age: yup.number().positive().integer().required(),
     }).required();
 
     const dispatch = useDispatch();
     const employees = useSelector((state) => state.employees)
     const { register, handleSubmit, formState: { errors },formState, control } = useForm({mode:'onTouched', resolver: yupResolver(schema)} );
-    const { isSubmitting, isSubmitted, isSubmitSuccessful } = formState;
+    const { isSubmitSuccessful } = formState;
 
     const onSubmitForm = (data) => {
+        alert(1)
         console.log(data)
         data.id = employees.length + 1;
         data.dateOfBirth = getDate(data.dateOfBirth)
         data.startDate = getDate(data.startDate)
-        dispatch(employeeAdded(data))
+        dispatch(employeeAdded(data));
+        //opne modal confirmation
+        setIsOpen(isOpen ? 0 : 1)
+        
     }  
 
-    const  navigate = useNavigate()
+   
      
     return (
       /* "handleSubmit" will validate your inputs before invoking "onSubmit" */
-      <form onSubmit={handleSubmit(onSubmitForm)} className="form-employee">
-                { isSubmitSuccessful && navigate(`/list_employee`)} 
+     <> <form onSubmit={handleSubmit(onSubmitForm)} className="form-employee">
+                
                 <div className="inputs">
                     {
                         form_inputs.map((data, index) => (
@@ -80,14 +92,11 @@ export default function Form(){
                                                 : 
                                                 (input.type === 'combo') ?
                                                     <Combo  key={ind} data={input} register={register} errors={errors}/>
-                                                
                                                 :
-                                               
                                                 <Input  key={ind} data={input} register={register} errors={errors}/>
                                             ))
                                         }
                                 </fieldset>
-                    
                         ))
                     } 
                 </div>
@@ -96,7 +105,21 @@ export default function Form(){
                     <Link to="/employee_list" className="btn btn-outline-danger">Cancel</Link>
                     <button type="submit" className="btn btn-outline-success">Save</button>
                 </div>
+                
+                
+   
       </form>
+      <button onClick={() => setIsOpen(isOpen ? 0 : 1)}>Click me!</button>
+      <Modal 
+      isOpen={isOpen}
+      title="Confirmation"
+      width="500px"
+      onClose={setIsOpen}
+      modalContent={<p>New employee successfully registered</p>}
+      footerContent={<><button onClick={() => setIsOpen(isOpen ? 0 : 1)} className="btn">Add new employee</button><button onClick={() =>goToEmployeeList()}>Employee List</button></>} 
+      openCloseModal=""
+    />
+  </>
     );
 
 }

@@ -12,7 +12,6 @@
   font-size: 13px;   
  }
 
-
 .employee-table > tbody > tr:nth-of-type(2n+1){
    background-color: rgba(237, 241, 247,.15) !important;
    border-bottom:1px solid #e5edf8 !important;
@@ -41,8 +40,6 @@ thead :first-child :first-child {
   tbody :last-child :last-child {
    border-bottom-right-radius: 0.5rem;
  }
-
-
  
 .btn-table{
   cursor: pointer;
@@ -75,35 +72,31 @@ thead :first-child :first-child {
    @include flex(row, space-between, center);
    height: 30px;
    margin-bottom: 2rem;
-
+          @media screen and (max-width: 1260px) {
+            @include flex(column, space-between, center);
+          }
  }
 
  .table-hrnet-success{
     background-color: #EDF1F7 !important;
-
  }
 
  .sortIcone i{
     margin-left:10px;
  }
-
-
  .table-header__filter {
    display: flex;
    justify-content: flex-end;
    align-items: center;
  }
- 
  .table-header__filter img {
    width: 16px;
    height: 16px;
    margin-right: 0.25rem;
  }
- 
  .table-header__filter input {
    margin-left: 0.5rem;
    padding: 0.25rem;
-  
    border-radius: 0.25rem;
  }
  

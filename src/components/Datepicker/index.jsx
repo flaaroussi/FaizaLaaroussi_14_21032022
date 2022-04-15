@@ -44,8 +44,8 @@ export default function Datepicker({data, register, errors, control}){
  */
  Datepicker.propTypes = {
       //data: PropTypes.objet.isRequired,
-      errors: PropTypes.func.isRequired,
-      control: PropTypes.func.isRequired,
+      //errors: PropTypes.func.isRequired,
+      //control: PropTypes.func.isRequired,
       
     };
     

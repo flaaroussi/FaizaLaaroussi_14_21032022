@@ -30,15 +30,13 @@
        position: relative;
        top: -6px;
      }
-     .btn{
-      background-color: $color-secondary !important;
-      border: $color-primary !important;;
-     }
-     .btn span,
-     i.fas{
-      
-       color: #ffffff !important;
+    
+     .btn span ,
+     i.fas{      
        margin-left: 6px;
+     }
+     .btn:hover *{      
+       color: #ffffff !important;
      }
    }
    .body{

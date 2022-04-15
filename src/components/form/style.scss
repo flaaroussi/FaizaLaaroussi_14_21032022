@@ -4,6 +4,13 @@
 .form-employee{
    display: flex;
    flex-direction: column;
+ 
+      @media screen and (max-width: 1260px) {
+         
+         
+      }
+    
+
       .input-error{
       color:$color-error;
       }
@@ -19,14 +26,11 @@
       }
       &__icon{
          @include flex( row, center, center);
-         
          img{
             width: 120px;
             height: 120px;
-
          }
       }
-
       .dateOfBirth,
       .startDate
       {
@@ -36,13 +40,23 @@
       .city{
          width: 220px;
       }
-
       .inputs{
          display: grid;
          grid-template-columns: auto auto;
          grid-template-rows: 440px auto ;
+
+            @media screen and (max-width: 1260px) {
+               display: grid;
+               grid-template-columns: auto ;
+               grid-template-rows:  auto ;
+            }
+
          fieldset{
-            width:80%
+            width:80%;
+            border :1px solid red;
+            @media screen and (max-width: 1260px) {
+               width:75%
+          }
          }
       }
 

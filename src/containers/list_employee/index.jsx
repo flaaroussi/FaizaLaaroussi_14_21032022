@@ -24,7 +24,7 @@ export default function ListEmployee(){
             <div className='bloc'>
                <div className='header'>
                   <div className="title">Employee List</div>
-                  <Link  to="/create_employee" className='btn btn-success'>
+                  <Link  to="/create_employee" className='btn btn-outline-success'>
                         <i class="fas fa-user-plus" alt="Wealth Health icone create"></i>   
                         <span>Add employee</span>
                    </Link>                  
