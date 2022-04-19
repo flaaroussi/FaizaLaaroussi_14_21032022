@@ -381,7 +381,7 @@
         "label": "Zip Code",
         "type": "text",
         "required":true,
-        "msg_error": "Street is required"
+        "msg_error": "Zip code is required and an integer"
       }
     ]
   },

@@ -65,6 +65,15 @@ thead :first-child :first-child {
    height: 50px;
    &__btn{
       justify-content: end;
+      margin-right: 20px
+   }
+   .gotopage{
+    @include flex(row, space-between, center);
+    span{
+      font-size: 12px;
+      margin-right: 10px;
+      margin-left: 10px
+    }
    }
  }
 
@@ -80,7 +89,6 @@ thead :first-child :first-child {
  .table-hrnet-success{
     background-color: #EDF1F7 !important;
  }
-
  .sortIcone i{
     margin-left:10px;
  }
@@ -98,6 +106,13 @@ thead :first-child :first-child {
    margin-left: 0.5rem;
    padding: 0.25rem;
    border-radius: 0.25rem;
+ }
+ .show-entrie{
+  @include flex( row, center, center);
+  select{
+    margin-left: 10px;
+    margin-right: 10px;
+  }
  }
  
 

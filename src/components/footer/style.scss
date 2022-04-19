@@ -5,5 +5,6 @@ footer{
    height: 50px;
    background-color: #FFFFFF;
    @include flex(row, center, center);
+   font-size: 11px;
  
 }

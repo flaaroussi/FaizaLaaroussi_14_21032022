@@ -22,7 +22,7 @@ export default function Navbar(){
                 <img className="nav-logo--brand"  src={logoBrand} alt="Wealth Health logo brand name" />
               </NavLink>
               <div className="nav-menu">
-                    <a>HRnet</a>
+                    <a>HRNet</a>
               </div>              
           </div>
         </nav>)

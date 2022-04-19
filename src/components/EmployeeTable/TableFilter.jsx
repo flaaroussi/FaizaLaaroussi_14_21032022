@@ -25,9 +25,11 @@ export default function TableFilter({ filter, setFilter, className, id }) {
   }, 500);
 
   return (
-    <>
-          <img src={searchIcon} alt="search icon" />
-          <label htmlFor={id}>Search</label>
+    <div class="input-group">
+          
+          <span className="input-group-text" id="basic-addon1">
+            <img src={searchIcon} alt="search icon" />
+          </span>
           <input
             className='form-control'
             id={id}
@@ -39,7 +41,7 @@ export default function TableFilter({ filter, setFilter, className, id }) {
               handleChange(e.target.value);
             }}
           />
-    </>
+    </div>
   );
 }
 

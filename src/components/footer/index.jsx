@@ -10,6 +10,6 @@ import './style.scss';
 
 export default function Footer(){
    return(<footer className="footer">
-        <div >WEALTH HEALTH</div>
+        <div >Product by WEALTH HEALTH - Version 2022.1</div>
    </footer>)
 }

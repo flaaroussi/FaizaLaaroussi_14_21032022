@@ -73,19 +73,21 @@ export default function EmployeeTable(){
   return (
     <>
       <header className='table-header'>        
-          <div>
-              Show  <select
-                      value={pageSize}
-                      onChange={e => {
-                        setPageSize(Number(e.target.value))
-                      }}
-                      >
-                      {[10, 20, 30, 40, 50].map(pageSize => (
-                        <option key={pageSize} value={pageSize}>
-                        {pageSize}
-                        </option>
-                      ))}
-                    </select> entries
+          <div className='show-entrie'>
+              <span>Show</span>
+              <select className='form-select'
+                  value={pageSize}
+                  onChange={e => {
+                    setPageSize(Number(e.target.value))
+                  }}
+                  >
+                  {[10, 20, 30, 40, 50].map(pageSize => (
+                    <option key={pageSize} value={pageSize}>
+                    {pageSize}
+                    </option>
+                  ))}
+              </select>
+              <span>entries</span>
           </div>
           <div className='totalEmployee'>
               {rows.length} Employees
@@ -153,16 +155,18 @@ export default function EmployeeTable(){
       </main>
 
       <footer className="table-pagination">      
-          <div>
+          <div className='gotopage'>
                 <span>
                     Page{' '}
                     <strong>
                       {pageIndex + 1} of {pageOptions.length}
                     </strong>{' '}
                 </span>
-                <span>
-                  | Go to page:{' '}
+                <span>|</span>
+                <span>Go to page:{' '}</span>
+                <span>                  
                     <input
+                    className='form-control'
                       type="number"
                       defaultValue={pageIndex + 1}
                       onChange={e => {

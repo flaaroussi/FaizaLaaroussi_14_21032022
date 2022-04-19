@@ -1,6 +1,4 @@
-import { 
-   ADD_EMPLOYEE
-} from "../actions/actionsTypes";
+import { ADD_EMPLOYEE } from "../actions/actionsTypes";
 import { initialState } from "../initialState/intialState";
 
 /**
@@ -20,7 +18,6 @@ import { initialState } from "../initialState/intialState";
                   employees : [...state.employees, action.payload]
                }
             }       
-
             default : 
             return state
       }
