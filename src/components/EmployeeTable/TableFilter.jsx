@@ -25,7 +25,7 @@ export default function TableFilter({ filter, setFilter, className, id }) {
   }, 500);
 
   return (
-    <div class="input-group">
+    <div className="input-group">
           
           <span className="input-group-text" id="basic-addon1">
             <img src={searchIcon} alt="search icon" />

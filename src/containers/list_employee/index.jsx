@@ -20,11 +20,11 @@ export default function ListEmployee(){
       }, []);
  
   
-   return(<main className="main">
+   return(<main className="main" aria-labelledby="page-title">
             <div className='bloc'>
                <div className='header'>
-                  <div className="title">Employee List</div>
-                  <Link  to="/create_employee" className='btn btn-outline-success'>
+                  <div className="title" >Employee List</div>
+                  <Link  to="/create_employee" className='btn btn-outline-success' data-cy="create-new-employee">
                         <i className="fas fa-user-plus" alt="Wealth Health icone create"></i>   
                         <span>Add employee</span>
                    </Link>                  

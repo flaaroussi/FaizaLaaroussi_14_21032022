@@ -62,20 +62,16 @@ export default function EmployeeTable(){
     prepareRow,
     rows
   } = tableInstance
-
-
  
    // handle TABLE STATE for different options
    const { globalFilter, pageIndex, pageSize } = state;
-
-    
 
   return (
     <>
       <header className='table-header'>        
           <div className='show-entrie'>
               <span>Show</span>
-              <select className='form-select'
+              <select tabIndex="0" className='form-select'
                   value={pageSize}
                   onChange={e => {
                     setPageSize(Number(e.target.value))
@@ -89,7 +85,7 @@ export default function EmployeeTable(){
               </select>
               <span>entries</span>
           </div>
-          <div className='totalEmployee'>
+          <div tabIndex="0" className='totalEmployee'>
               {rows.length} Employees
           </div> 
           <div className='table-header__filter'>
@@ -141,7 +137,7 @@ export default function EmployeeTable(){
                         row.cells.map(cell => {
                           // Apply the cell props
                           return (
-                            <td {...cell.getCellProps()}>
+                            <td tabIndex="0" {...cell.getCellProps()}>
                               {// Render the cell contents
                               cell.render('Cell')}
                             </td>
@@ -179,16 +175,16 @@ export default function EmployeeTable(){
           </div>
           {/* Bottons of pagination */}
           <div className="table-pagination__btn">
-              <button className="btn" onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
+              <button className="btn" onClick={() => gotoPage(0)} disabled={!canPreviousPage} aria-label="go to first page">
                   <i className="fas fa-angle-double-left"></i>
               </button>{' '}
-              <button className="btn" onClick={() => previousPage()} disabled={!canPreviousPage}>
+              <button className="btn" onClick={() => previousPage()} disabled={!canPreviousPage} aria-label="go to previous page">
                 <i className="fas fa-angle-left"></i>
               </button>{' '}
-              <button className="btn" onClick={() => nextPage()} disabled={!canNextPage}>
+              <button className="btn" onClick={() => nextPage()} disabled={!canNextPage} aria-label="go to next page">
               <i className="fas fa-angle-right"></i>
               </button>{' '}
-              <button className="btn" onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage}>
+              <button className="btn" onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage} aria-label="go to last page">
                 <i className="fas fa-angle-double-right"></i>
               </button>{' '}
           </div>

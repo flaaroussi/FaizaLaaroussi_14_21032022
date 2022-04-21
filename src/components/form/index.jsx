@@ -108,7 +108,7 @@ export default function Form(){
                     } 
                 </div>
                 <div className="mb-3">
-                    <Link to="/employee_list" className="btn btn-outline-danger">Cancel</Link>
+                    <Link to="/employee_list" className="btn btn-outline-danger" data-cy="cancel-new-employee">Cancel</Link>
                     <button type="submit" className="btn btn-outline-success">Save</button>
                 </div>
         </form>

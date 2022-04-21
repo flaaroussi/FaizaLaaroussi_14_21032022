@@ -15,9 +15,9 @@ import { NavLink } from 'react-router-dom';
 
 export default function Navbar(){  
    return(
-        <nav className="navbar navbar-expand-lg navbar-dark bg-blanc">
+        <nav className="navbar navbar-expand-lg navbar-dark bg-blanc" aria-labelledby='nav'>
           <div className="container-fluid">
-              <NavLink to = "/create_employee" className="nav-logo">
+              <NavLink to = "/create_employee" className="nav-logo" aria-label="nav-logo">
                 <img className="nav-logo--design" src={logoDesign} alt="Wealth Health logo design" />
                 <img className="nav-logo--brand"  src={logoBrand} alt="Wealth Health logo brand name" />
               </NavLink>
