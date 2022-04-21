@@ -5,6 +5,8 @@
 
  HRnet à lui seul représente environ 90% de la dette technologique totale.Elle utilise  jQuery côté front end, ce qui entraîne des bugs et rend le système mois performant et instable.
 
+ ![Demo text](app.png)
+
 > BESOINS
 
 - Convertir l'ensemble du projet HRNet en React. 
