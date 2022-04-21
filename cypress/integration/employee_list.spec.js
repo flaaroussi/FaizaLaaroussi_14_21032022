@@ -6,5 +6,10 @@ describe('Empoloyee list', () => {
    it('Display list employee with navigation', () => {
       cy.visit('/employee_list')
       cy.get('table').should('have.class', 'employee-table')
-   });   
+   }); 
+    
+   it('Search an employee', () => {
+      cy.visit('/employee_list')
+      cy.get('#search-input').type('Saad').should('have.value', 'Saad')
+   });  
  });

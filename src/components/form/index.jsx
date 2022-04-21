@@ -118,7 +118,8 @@ export default function Form(){
             width="500px"
             onClose={setIsOpen}
             modalContent={<p>New employee successfully registered</p>}
-            footerContent={<><button onClick={() => setIsOpen(isOpen ? 0 : 1)} className="btn btn-outline-success">Add new employee</button><button className="btn btn-outline-success" onClick={() =>goToEmployeeList()}>Employee List</button></>} 
+            footerContent={<><button onClick={() => setIsOpen(isOpen ? 0 : 1)} className="btn btn-outline-success">Add new employee</button>
+            <button data-testid="modal_confirme_btn_employee_list" className="btn btn-outline-success" onClick={() =>goToEmployeeList()}>Employee List</button></>} 
             openCloseModal=""
         />
     </>

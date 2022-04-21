@@ -89,9 +89,9 @@ export default function EmployeeTable(){
               {rows.length} Employees
           </div> 
           <div className='table-header__filter'>
-              <TableFilter 
+              <TableFilter                
                 className="table-header--search"
-                id="search"
+                id="search-input"
                 filter={globalFilter}
                 setFilter={setGlobalFilter}
               />
