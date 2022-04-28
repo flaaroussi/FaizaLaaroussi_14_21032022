@@ -10,8 +10,6 @@ import PropTypes from 'prop-types';
  *
  * @returns {Reactnode}   jsx injected in DOM
  */
-
-
 export default function Input({data, register, errors}){
   
    const  isRequired = data.required;
@@ -21,19 +19,20 @@ export default function Input({data, register, errors}){
          <label className="form-label" htmlFor={data.id} >{data.label}</label>
 
          {/* inclure la validation avec les règles de validation HTML obligatoires ou standard */}
-         <input name={data.name} id={data.id} {...register(data.name, { required: isRequired })} className="form-control" />
+         <input name={data.name} id={data.id} {...register(data.name, { required: isRequired })} className="form-control" aria-required={isRequired} aria-labelledby={data.id} placeholder={data.name} tabIndex={data.index}/>
          {/* des erreurs s'afficheront en cas d'échec de la validation du champ */} 
 
          {errors.hasOwnProperty(data.name) && <span className="input-error">{data.msg_error}</span>}   
              
    </div>)
 }
-/////////////////////////////////////////////
+
 
 /**
  * Input PROPTYPES
  */
  Input.propTypes = {
-     
-      register: PropTypes.func,
+      data: PropTypes.object,
+      register: PropTypes.object,
+      errors: PropTypes.object
     };

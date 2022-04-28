@@ -9,7 +9,8 @@
         "label":"First name",
         "type":"text",
         "required":true,
-        "msg_error":"First name is required"
+        "msg_error":"First name is required",
+        "index":1
       },
       {
         "className": "lastName",
@@ -18,7 +19,8 @@
         "label": "Last name",
         "type": "text",
         "required":true,
-        "msg_error":"Last name is required"
+        "msg_error":"Last name is required",
+        "index":2
       },
       {
         "className": "dateOfBirth",
@@ -27,7 +29,8 @@
         "label": "Date of Birth",
         "type": "date",
         "required":true,
-        "msg_error":"Date of Birth is required"
+        "msg_error":"Date of Birth is required",
+        "index":3
       },
       {
         "className": "startDate",
@@ -36,7 +39,8 @@
         "label": "Start Date",
         "type": "date",
         "required":true,
-        "msg_error": "Start date is required"
+        "msg_error": "Start date is required",
+        "index":4
       }
     ]      
   },
@@ -50,7 +54,8 @@
         "label": "Street",
         "type": "text",
         "required":true,
-        "msg_error": "Street is required"
+        "msg_error": "Street is required",
+        "index":6
       },
       {
         "className": "city",
@@ -59,7 +64,8 @@
         "label": "City",
         "type": "city",
         "required":true,
-        "msg_error": "City is required"
+        "msg_error": "City is required",
+        "index":7
       },
       {
         "className": "state",
@@ -69,6 +75,7 @@
         "type": "combo",
         "required":true,
         "msg_error": "State is required",
+        "index":8,
         "options": [
           {
             "label": "--",
@@ -381,7 +388,8 @@
         "label": "Zip Code",
         "type": "text",
         "required":true,
-        "msg_error": "Zip code is required and an integer"
+        "msg_error": "Zip code is required and an integer",
+        "index":9
       }
     ]
   },
@@ -396,6 +404,7 @@
         "type": "combo",
         "required":true,
         "msg_error": "Departement is required",
+        "index":5,
         "options" : [
             { "abbrev": "NO", "value": "--", "label": "--" },
             { "abbrev": "SU", "value": "Support", "label": "Support" },

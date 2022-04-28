@@ -1,7 +1,6 @@
 
 import React from 'react'
 import { Link } from 'react-router-dom';
-import { useTable, useSortBy } from 'react-table'
 import EmployeeTable from '../../components/EmployeeTable';
 import { useEffect } from 'react';
 import './style.scss';

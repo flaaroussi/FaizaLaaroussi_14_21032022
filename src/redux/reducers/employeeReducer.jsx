@@ -2,14 +2,13 @@ import { ADD_EMPLOYEE } from "../actions/actionsTypes";
 import { initialState } from "../initialState/intialState";
 
 /**
- * reducer qui modifie les states : authentification de l'utilisateur et  update du profil
+ * reducer qui modifie le state initial :  update de la liste des employee
  * @param {*} state 
  * @param {*} action 
  * @returns 
  */
 
  const employeeReducer = (state = initialState, action) => {
-   console.log(action)
       switch(action.type){
          case ADD_EMPLOYEE:
             {

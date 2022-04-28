@@ -8,7 +8,7 @@ import DatePicker from 'react-datepicker';
  * @returns  {Reactnode}   jsx injected in DOM
  */
 
-export default function Datepicker({data, register, errors, control}){
+export default function Datepicker({data,  errors, control}){
   
       
   
@@ -22,11 +22,15 @@ export default function Datepicker({data, register, errors, control}){
                   name={data.name}
                   render={({ field }) =>(
                   <DatePicker
+                  id={data.id}
                   className="form-control"
                   name={data.name}
                   onChange={(date) => field.onChange(date)}
                   selected={field.value}
-                  
+                  aria-required="true" 
+                  tabIndex={data.index}
+                  aria-labelledby={data.id} 
+                  placeholder={data.name}
                   />
                   )}
                   />   
@@ -38,14 +42,12 @@ export default function Datepicker({data, register, errors, control}){
    </div>)
 }
 
-
 /**
- * date PROPTYPES///////////////////////////////////
+ * date PROPTYPES
  */
  Datepicker.propTypes = {
-      //data: PropTypes.objet.isRequired,
-      //errors: PropTypes.func.isRequired,
-      //control: PropTypes.func.isRequired,
-      
+      data: PropTypes.object.isRequired,
+      errors: PropTypes.object.isRequired,
+      control: PropTypes.object.isRequired,
     };
     

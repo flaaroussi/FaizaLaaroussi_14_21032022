@@ -4,8 +4,8 @@ import {
 } from "./actionsTypes"
 
 /**
- * Action qui modifie le state token
- * @param {*} token 
+ * Action qui modifie le state new employee
+ * @param {*} new employee 
  * @returns 
  */
 export const employeeAdded = (newEmployee)=>({

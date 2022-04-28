@@ -2,7 +2,7 @@
 import React, { useState} from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux'
-import { useForm, Controller, register } from "react-hook-form";
+import { useForm} from "react-hook-form";
 import moment from "moment";
 
 import form_inputs from '../../data/form_employee_inputs.json';
@@ -24,7 +24,6 @@ import 'reactmodalfz/dist/index.css'
  * @param {*} date 
  * @returns date exemple 01/03/2022
  */
-
 const getDate  = (date) => {
     moment.locale('fr'); 
     return moment(date).subtract(10, 'days').calendar();  
@@ -36,18 +35,16 @@ const getDate  = (date) => {
  * 
  * @returns {Reactnode}   jsx injected in DOM
  */
-
 export default function Form(){   
     const [isOpen, setIsOpen]  = useState(0); 
     const  navigate = useNavigate()
-    
     const goToEmployeeList = ()=>{
         //fermer le modal
         setIsOpen(0)
         //puis redirect
         navigate(`/employee_list`)
     }
-    //Schema de validation avec yub
+    //Schema de validation avec yup
     const schema = yup.object({
         firstName: yup.string().required(),
         lastName: yup.string().required(),
@@ -71,17 +68,21 @@ export default function Form(){
 
     const dispatch = useDispatch();
     const employees = useSelector((state) => state.employees)
-    const { register, handleSubmit, formState: { errors },formState, control } = useForm({mode:'onTouched', resolver: yupResolver(schema)} );
-    const { isSubmitSuccessful } = formState;
+    const { register, handleSubmit, reset, formState: { errors }, control } = useForm({mode:'onTouched', resolver: yupResolver(schema)} );
 
     const onSubmitForm = (data) => {
         data.id = employees.length + 1;
         data.dateOfBirth = getDate(data.dateOfBirth)
         data.startDate = getDate(data.startDate)
         dispatch(employeeAdded(data));
-        //opne modal confirmation
-        setIsOpen(isOpen ? 0 : 1)
+        //open modal confirmation
+        setIsOpen(1)
     }  
+    const doAddNewEmployee = () =>{
+        setIsOpen(0)
+        reset();
+    }
+    
      
     return (
       /* "handleSubmit" will validate your inputs before invoking "onSubmit" */
@@ -90,12 +91,12 @@ export default function Form(){
                 <div className="inputs">
                     {
                         form_inputs.map((data, index) => (
-                                <fieldset key={index}>
-                                    {data.name && <legend className="addressDetail" >{data.name}</legend>}
+                                <fieldset key={index} aria-labelledby={data.name}>
+                                    {data.name && <legend id={data.name}>{data.name}</legend>}
                                         {
                                             data.inputs.map((input, ind) => (
                                                 (input.type === 'date') ?
-                                                <Datepicker  key={ind} data={input} register={register} errors={errors} control={control} />
+                                                <Datepicker  key={ind} data={input}  errors={errors} control={control} />
                                                 : 
                                                 (input.type === 'combo') ?
                                                     <Combo  key={ind} data={input} register={register} errors={errors}/>
@@ -118,7 +119,7 @@ export default function Form(){
             width="500px"
             onClose={setIsOpen}
             modalContent={<p>New employee successfully registered</p>}
-            footerContent={<><button onClick={() => setIsOpen(isOpen ? 0 : 1)} className="btn btn-outline-success">Add new employee</button>
+            footerContent={<><button onClick={() => doAddNewEmployee()} className="btn btn-outline-success">Add new employee</button>
             <button data-testid="modal_confirme_btn_employee_list" className="btn btn-outline-success" onClick={() =>goToEmployeeList()}>Employee List</button></>} 
             openCloseModal=""
         />

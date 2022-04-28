@@ -1,5 +1,5 @@
 import React from 'react'
-
+import PropTypes from 'prop-types';
 
 /**
  * @description component combo
@@ -14,7 +14,7 @@ import React from 'react'
   return( 
     <div className={`form-employee__input ${data.name}`}>
       <label className="form-label" htmlFor={data.id}>{data.label}</label>
-      <select name={data.name} id={data.id} {...register(data.name,  { required: isRequired })} className="form-select">
+      <select name={data.name} id={data.id} {...register(data.name,  { required: isRequired })} className="form-select" aria-required={isRequired} aria-labelledby={data.id} tabIndex={data.index}>
         {
           data.options.map((option, index) => (
             <option key={index} value={option.value}>{option.label}</option>
@@ -26,3 +26,12 @@ import React from 'react'
     )
    
 }
+
+/**
+ * Input PROPTYPES
+ */
+ Combo.propTypes = {
+  data: PropTypes.object,
+  register: PropTypes.object,
+  errors: PropTypes.object
+};

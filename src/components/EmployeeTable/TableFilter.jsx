@@ -27,14 +27,16 @@ export default function TableFilter({ filter, setFilter, className, id }) {
   return (
     <div className="input-group">
           
-          <span className="input-group-text" id="basic-addon1">
+          <label htmlFor='quick_search' className="input-group-text" id="basic-addon1">
             <img src={searchIcon} alt="search icon" />
-          </span>
+          </label>
           <input
             className='form-control'
-            id={id}
+            id="quick_search"
             type="search"
             role="searchbox"
+            placeholder="search"
+            
             value={value || ''}
             onChange={(e) => {
               setValue(e.target.value);

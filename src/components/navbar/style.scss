@@ -4,8 +4,8 @@
 /*Navbar*/
 
 .nav-menu {
-  @include flex( row, space-between, center)
-  
+  @include flex( row, space-between, center);
+  color: $color-primary;
  }
 
 .navbar{

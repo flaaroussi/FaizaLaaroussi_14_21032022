@@ -4,14 +4,15 @@ import { useSelector } from 'react-redux'
 import { 
    useTable, 
    useSortBy,
-   useFilters, 
    useGlobalFilter, 
    usePagination} from 'react-table';
 
 import { TABLE_COLUMNS } from './TableColumns';
-import './style.scss';
 import TableFilter from './TableFilter';
-import Input from '../input';
+
+import './style.scss';
+
+
 
 /**
  * @description component Table employee
@@ -21,13 +22,10 @@ import Input from '../input';
  */
 
 export default function EmployeeTable(){  
-
+  //Récupéré les données du state avec useSelector
   const employees = useSelector((state) => state.employees)
-
-  const data = useMemo(
-      () => employees ,
-      []
-    )
+  //
+  const data = useMemo(() => employees ,[employees])
           
   // useMemo HOOK to avoid re-rendering until the data changes
   const columns = useMemo(() => TABLE_COLUMNS, []);
@@ -42,7 +40,6 @@ export default function EmployeeTable(){
                             useSortBy,
                             usePagination
                         )
-
 //proprité du table :TABLE PROPS to define table instance
   const  {
     getTableProps,
@@ -62,10 +59,8 @@ export default function EmployeeTable(){
     prepareRow,
     rows
   } = tableInstance
- 
    // handle TABLE STATE for different options
    const { globalFilter, pageIndex, pageSize } = state;
-
   return (
     <>
       <header className='table-header'>        
@@ -149,7 +144,6 @@ export default function EmployeeTable(){
             </tbody>
           </table>
       </main>
-
       <footer className="table-pagination">      
           <div className='gotopage'>
                 <span>
@@ -159,18 +153,19 @@ export default function EmployeeTable(){
                     </strong>{' '}
                 </span>
                 <span>|</span>
-                <span>Go to page:{' '}</span>
+                <label htmlFor='pager_number'>Go to page:{' '}</label>
                 <span>                  
                     <input
-                    className='form-control'
-                      type="number"
-                      defaultValue={pageIndex + 1}
-                      onChange={e => {
-                        const page = e.target.value ? Number(e.target.value) - 1 : 0
-                        gotoPage(page)
-                      }}
-                      style={{ width: '100px' }}
-                  />
+                    id = "pager_number"
+                          className='form-control'
+                          type="number"
+                          defaultValue={pageIndex + 1}
+                          onChange={e => {
+                            const page = e.target.value ? Number(e.target.value) - 1 : 0
+                            gotoPage(page)
+                          }}
+                          style={{ width: '100px' }}
+                    />
                 </span>{' '}
           </div>
           {/* Bottons of pagination */}
@@ -188,7 +183,6 @@ export default function EmployeeTable(){
                 <i className="fas fa-angle-double-right"></i>
               </button>{' '}
           </div>
-
       </footer>
    </>
   )

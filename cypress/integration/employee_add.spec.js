@@ -36,7 +36,7 @@ describe('Add empoloyee', () => {
       cy.wait(60);
       cy.get('.fa-angle-double-right').click();
       cy.wait(60);
-      cy.get('table tbody tr').last().contains('TestCypressToto');    
+      cy.get('table tbody tr').last().contains('Faiza');    
       
       
    })
