@@ -10,6 +10,6 @@ describe('Empoloyee list', () => {
     
    it('Search an employee', () => {
       cy.visit('/employee_list')
-      cy.get('#search-input').type('Saad').should('have.value', 'Saad')
+      cy.get('#quick_search').type('Saad').should('have.value', 'Saad')
    });  
  });

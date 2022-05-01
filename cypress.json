@@ -1,4 +1,3 @@
 {
-   "baseUrl" : "http://localhost:5000/",
-   "reporter": "reporters/custom.js"
+   "baseUrl" : "http://localhost:5000/"
 }
