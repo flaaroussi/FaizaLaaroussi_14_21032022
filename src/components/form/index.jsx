@@ -30,13 +30,13 @@ const getDate  = (date) => {
 } 
 
 /**
- * @description component form employee
+ * @description création component form employee
  * @component
  * 
  * @returns {Reactnode}   jsx injected in DOM
  */
 export default function Form(){   
-    const [isOpen, setIsOpen]  = useState(0); 
+    const [isOpen, setIsOpen]  = useState(0) 
     const  navigate = useNavigate()
     const goToEmployeeList = ()=>{
         //fermer le modal
@@ -71,9 +71,10 @@ export default function Form(){
     const { register, handleSubmit, reset, formState: { errors }, control } = useForm({mode:'onTouched', resolver: yupResolver(schema)} );
 
     const onSubmitForm = (data) => {
-        data.id = employees.length + 1;
+        data.id = employees.length + 1
         data.dateOfBirth = getDate(data.dateOfBirth)
         data.startDate = getDate(data.startDate)
+        //add new employee to state
         dispatch(employeeAdded(data));
         //open modal confirmation
         setIsOpen(1)
@@ -102,7 +103,7 @@ export default function Form(){
                                                     <Combo  key={ind} data={input} register={register} errors={errors}/>
                                                 :
                                                 <Input  key={ind} data={input} register={register} errors={errors}/>
-                                            ))
+                                            )) 
                                         }
                                 </fieldset>
                         ))

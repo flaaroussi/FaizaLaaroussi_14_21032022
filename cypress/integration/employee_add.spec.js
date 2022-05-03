@@ -2,11 +2,12 @@ import { wait } from "@testing-library/user-event/dist/utils";
 
 describe('Add empoloyee', () => {    
 
-   it('Add new employee', () => {
+   it('Click on Add new employee', () => {
       cy.wait(1000)
       cy.visit('/employee_list')
       cy.wait(1000)
-      cy.get('[data-cy="create-new-employee"]').click()
+      cy.get('[data-cy=create-new-employee]').click()
+      cy.get('div.title').should('have.text', 'Add a new employee')
       cy.wait(1000)
    })
 
@@ -15,6 +16,7 @@ describe('Add empoloyee', () => {
       cy.visit('/create_employee');
       cy.wait(1000)
       cy.get('[data-cy="cancel-new-employee"]').click();
+      cy.get('table').should('have.class', 'employee-table')
       cy.wait(1000)
    })  
 
